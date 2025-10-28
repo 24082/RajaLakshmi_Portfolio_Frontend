@@ -9,19 +9,25 @@ import {
 } from '@mui/material';
 import { Code, Speed, Devices } from '@mui/icons-material';
 import { FaReact, FaNodeJs } from 'react-icons/fa';
-import { SiExpress, SiMongodb, SiMui, SiReactrouter, SiPostman, SiAmazon } from 'react-icons/si';
-import backgroundImg from '../assets/background.png';
+import {
+  SiExpress,
+  SiMongodb,
+  SiMui,
+  SiReactrouter,
+  SiPostman,
+  SiAmazon,
+} from 'react-icons/si';
 
 function Projects() {
   const techStack = [
-    { name: "React.js", icon: <FaReact color="#61DBFB" size={40} /> },
-    { name: "Node.js", icon: <FaNodeJs color="#68A063" size={40} /> },
-    { name: "Express.js", icon: <SiExpress color="#000000" size={40} /> },
-    { name: "MongoDB", icon: <SiMongodb color="#4DB33D" size={40} /> },
-    { name: "React Router", icon: <SiReactrouter color="#CA4245" size={40} /> },
-    { name: "Material-UI", icon: <SiMui color="#007FFF" size={40} /> },
-    { name: "REST APIs", icon: <SiPostman color="#FF6C37" size={40} /> },
-    { name: "Cloud Deployment", icon: <SiAmazon color="#FF9900" size={40} /> },
+    { name: 'React.js', icon: <FaReact color="#61DBFB" size={35} /> },
+    { name: 'Node.js', icon: <FaNodeJs color="#68A063" size={35} /> },
+    { name: 'Express.js', icon: <SiExpress color="#000000" size={35} /> },
+    { name: 'MongoDB', icon: <SiMongodb color="#4DB33D" size={35} /> },
+    { name: 'React Router', icon: <SiReactrouter color="#CA4245" size={35} /> },
+    { name: 'Material-UI', icon: <SiMui color="#007FFF" size={35} /> },
+    { name: 'REST APIs', icon: <SiPostman color="#FF6C37" size={35} /> },
+    { name: 'Cloud Deployment', icon: <SiAmazon color="#FF9900" size={35} /> },
   ];
 
   return (
@@ -29,13 +35,13 @@ function Projects() {
       sx={{
         maxWidth: 1200,
         mx: 'auto',
-        my: 8,
-        p: 4,
+        my: { xs: 4, md: 8 },
+        p: { xs: 2, sm: 3, md: 5 },
         borderRadius: 3,
         boxShadow: 6,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundColor: 'rgba(255, 255, 255, 0.95)',
       }}
+      id="projects"
     >
       {/* Title */}
       <Typography
@@ -44,7 +50,8 @@ function Projects() {
         sx={{
           color: '#0f355e',
           fontWeight: 'bold',
-          mb: 6,
+          mb: { xs: 3, md: 6 },
+          fontSize: { xs: '1.8rem', sm: '2rem', md: '2.3rem' },
         }}
       >
         My Projects
@@ -52,9 +59,9 @@ function Projects() {
 
       {/* Project Card */}
       <Paper
-        elevation={6}
+        elevation={4}
         sx={{
-          p: 5,
+          p: { xs: 3, sm: 4, md: 5 },
           borderRadius: 3,
           position: 'relative',
           overflow: 'hidden',
@@ -62,24 +69,8 @@ function Projects() {
           boxShadow: '0 8px 20px rgba(0,0,0,0.1)',
           transition: 'transform 0.4s ease, box-shadow 0.4s ease',
           '&:hover': {
-            transform: 'translateY(-8px) scale(1.02)',
+            transform: { md: 'translateY(-8px) scale(1.02)' },
             boxShadow: '0 12px 30px rgba(0,0,0,0.2)',
-          },
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: -2,
-            left: -2,
-            right: -2,
-            bottom: -2,
-            borderRadius: 3,
-            zIndex: -1,
-            animation: 'glow 3s linear infinite',
-          },
-          '@keyframes glow': {
-            '0%': { filter: 'blur(4px)' },
-            '50%': { filter: 'blur(8px)' },
-            '100%': { filter: 'blur(4px)' },
           },
         }}
       >
@@ -91,6 +82,7 @@ function Projects() {
             fontWeight: 700,
             color: '#3376e3ff',
             textTransform: 'capitalize',
+            fontSize: { xs: '1.3rem', md: '1.6rem' },
           }}
         >
           Personal Portfolio Website
@@ -102,50 +94,36 @@ function Projects() {
         <Typography
           variant="body1"
           sx={{
-            mb: 3,
+            mb: 2,
             color: '#333',
-            lineHeight: 1.9,
+            lineHeight: 1.8,
             textAlign: 'justify',
+            fontSize: { xs: '0.95rem', md: '1rem' },
           }}
         >
           This is my <strong>first full-stack project</strong> that represents my
           journey as a developer. It showcases my skills, projects, and technical
-          expertise through a clean <em>React.js interface</em>, smooth navigation,
-          and a <strong>fully functional contact form</strong> integrated with a
-          backend server.
+          expertise through a clean <em>React.js interface</em> and a{' '}
+          <strong>fully functional contact form</strong> integrated with a backend server.
         </Typography>
 
         <Typography
           variant="body1"
           sx={{
-            mb: 3,
+            mb: 2,
             color: '#333',
-            lineHeight: 1.9,
+            lineHeight: 1.8,
             textAlign: 'justify',
+            fontSize: { xs: '0.95rem', md: '1rem' },
           }}
         >
           The backend uses <strong>Node.js</strong> and <strong>Express</strong>,
           with data stored in <strong>MongoDB</strong>. It’s deployed on a cloud
-          platform with <em>CI/CD pipelines</em>, ensuring speed, security, and
-          scalability.
-        </Typography>
-
-        <Typography
-          variant="body1"
-          sx={{
-            mb: 3,
-            color: '#333',
-            lineHeight: 1.9,
-            textAlign: 'justify',
-          }}
-        >
-          This project reflects my ability to build <strong>user-centric</strong>{' '}
-          solutions that are both practical and visually engaging. It’s the
-          cornerstone of my full-stack journey.
+          platform with <em>CI/CD pipelines</em>, ensuring speed, security, and scalability.
         </Typography>
 
         {/* Highlights Grid */}
-        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', mb: { xs: 3, md: 4 } }}>
           <Grid container spacing={3} justifyContent="center" maxWidth="md">
             {[
               {
@@ -167,12 +145,11 @@ function Projects() {
                 hoverColor: '#ffe0b2',
               },
             ].map((item, i) => (
-              <Grid item xs={12} sm={4} key={i}>
+              <Grid item xs={12} sm={6} md={4} key={i}>
                 <Box
-                  onClick={() => console.log(`${item.title} clicked`)}
                   sx={{
                     textAlign: 'center',
-                    p: 2,
+                    p: { xs: 2, sm: 3 },
                     borderRadius: 2,
                     backgroundColor: '#f5f5f5',
                     boxShadow: 2,
@@ -188,7 +165,10 @@ function Projects() {
                   <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mt: 1 }}>
                     {item.title}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: '#555', mt: 1 }}>
+                  <Typography
+                    variant="body2"
+                    sx={{ color: '#555', mt: 1, fontSize: { xs: '0.9rem' } }}
+                  >
                     {item.desc}
                   </Typography>
                 </Box>
@@ -200,12 +180,26 @@ function Projects() {
         {/* Tech Stack */}
         <Typography
           variant="subtitle1"
-          sx={{ fontWeight: 600, color: '#0f355e', mb: 2, textAlign: 'center' }}
+          sx={{
+            fontWeight: 600,
+            color: '#0f355e',
+            mb: 2,
+            textAlign: 'center',
+            fontSize: { xs: '1rem', md: '1.2rem' },
+          }}
         >
           Tech Stack Used
         </Typography>
 
-        <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 3, mt: 2 }}>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            gap: { xs: 2, sm: 3 },
+            mt: 2,
+          }}
+        >
           {techStack.map((tech, index) => (
             <Stack
               key={index}
@@ -215,13 +209,23 @@ function Projects() {
               sx={{
                 p: 1.5,
                 borderRadius: 2,
-                transition: "transform 0.3s, box-shadow 0.3s",
-                cursor: "pointer",
-                '&:hover': { transform: "scale(1.2)", boxShadow: "0 4px 20px rgba(0,0,0,0.2)" },
+                transition: 'transform 0.3s, box-shadow 0.3s',
+                cursor: 'pointer',
+                '&:hover': {
+                  transform: 'scale(1.15)',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
+                },
               }}
             >
               {tech.icon}
-              <Typography variant="subtitle2" sx={{ fontWeight: 500, mt: 0.5 }}>
+              <Typography
+                variant="subtitle2"
+                sx={{
+                  fontWeight: 500,
+                  mt: 0.5,
+                  fontSize: { xs: '0.8rem', sm: '0.9rem' },
+                }}
+              >
                 {tech.name}
               </Typography>
             </Stack>
@@ -232,10 +236,11 @@ function Projects() {
         <Typography
           variant="body2"
           sx={{
-            mt: 4,
+            mt: { xs: 3, md: 4 },
             fontStyle: 'italic',
             textAlign: 'center',
             color: '#666',
+            fontSize: { xs: '0.85rem', sm: '0.95rem' },
           }}
         >
           “Every line of code in this portfolio is a step forward in my journey —

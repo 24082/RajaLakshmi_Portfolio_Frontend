@@ -15,7 +15,6 @@ import {
   IconButton,
 } from '@mui/material';
 import { LinkedIn, Email, Phone } from '@mui/icons-material';
-import backgroundImg from '../assets/background.png';
 import contactImg from '../assets/Contact.png';
 
 function Contact() {
@@ -50,10 +49,12 @@ function Contact() {
   return (
     <Box
       sx={{
-        width: 1200,
+        width: '100%',
+        maxWidth: 1200,
         mx: 'auto',
-        my: 6,
-        p: 4,
+        my: { xs: 4, md: 8 },
+        px: { xs: 2, sm: 3, md: 6 },
+        py: { xs: 3, md: 5 },
         borderRadius: 4,
         boxShadow: 6,
         backgroundSize: 'cover',
@@ -77,6 +78,7 @@ function Contact() {
           fontWeight: 'bold',
           textTransform: 'uppercase',
           letterSpacing: 2,
+          fontSize: { xs: '1.6rem', md: '2rem' },
         }}
       >
         Get in Touch
@@ -104,14 +106,13 @@ function Contact() {
             link: 'tel:+91 9080890961',
           },
         ].map((info, i) => (
-          <Grid item xs={12} sm={4} key={i}>
+          <Grid item xs={12} sm={6} md={4} key={i}>
             <Card
               sx={{
                 textAlign: 'center',
                 borderRadius: 3,
                 p: 2,
-                height: 200,
-                width:  220,
+                height: { xs: 180, md: 200 },
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
@@ -123,10 +124,6 @@ function Contact() {
                   transform: 'translateY(-8px) scale(1.05)',
                   boxShadow: 10,
                   background: 'linear-gradient(135deg, #ac85d6ff, #79bb80ff)',
-                  
-                },
-                '&:hover .MuiSvgIcon-root': {
-                  
                 },
               }}
             >
@@ -134,7 +131,6 @@ function Contact() {
                 <IconButton
                   onClick={() => window.open(info.link, '_blank')}
                   sx={{
-                    backgroundColor: 'transparent',
                     p: 2,
                     borderRadius: '50%',
                     mb: 2,
@@ -149,7 +145,10 @@ function Contact() {
                 <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                   {info.label}
                 </Typography>
-                <Typography variant="body2" sx={{ color: '#555' }}>
+                <Typography
+                  variant="body2"
+                  sx={{ color: '#555', wordBreak: 'break-word' }}
+                >
                   {info.value}
                 </Typography>
               </CardContent>
@@ -162,7 +161,7 @@ function Contact() {
       <Box
         sx={{
           display: 'flex',
-          flexWrap: 'wrap',
+          flexDirection: { xs: 'column', md: 'row' },
           gap: 3,
           alignItems: 'stretch',
         }}
@@ -172,7 +171,7 @@ function Contact() {
           sx={{
             flex: 1,
             textAlign: 'center',
-            p: 3,
+            p: { xs: 3, md: 4 },
             color: 'white',
             background: 'linear-gradient(135deg, #007bff, #0056b3)',
             borderRadius: 3,
@@ -182,10 +181,24 @@ function Contact() {
             justifyContent: 'center',
           }}
         >
-          <Typography variant="h4" sx={{ mb: 2, fontWeight: 'bold' }}>
+          <Typography
+            variant="h4"
+            sx={{
+              mb: 2,
+              fontWeight: 'bold',
+              fontSize: { xs: '1.6rem', md: '2rem' },
+            }}
+          >
             Let’s Work Together
           </Typography>
-          <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.6 }}>
+          <Typography
+            variant="body1"
+            sx={{
+              mb: 3,
+              lineHeight: 1.6,
+              fontSize: { xs: '0.95rem', md: '1rem' },
+            }}
+          >
             Whether you're looking to build a web app, collaborate on a project,
             or just say hello — I'd love to hear from you.
           </Typography>
@@ -195,8 +208,8 @@ function Contact() {
             alt="Contact"
             sx={{
               width: '100%',
-              maxWidth: 220,
-              height: 220,
+              maxWidth: { xs: 180, md: 220 },
+              height: 'auto',
               borderRadius: '50%',
               objectFit: 'cover',
               boxShadow: '0 0 15px rgba(255,255,255,0.7)',
@@ -211,7 +224,7 @@ function Contact() {
           elevation={6}
           sx={{
             flex: 2,
-            p: 4,
+            p: { xs: 3, md: 4 },
             borderRadius: 3,
             background: 'linear-gradient(135deg, #ffffff, #f1f6fb)',
             boxShadow: '0 8px 20px rgba(0,0,0,0.1)',
