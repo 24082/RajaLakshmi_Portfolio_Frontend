@@ -9,7 +9,8 @@ import {
   IconButton,
 } from "@mui/material";
 import { GitHub, LinkedIn, Email } from "@mui/icons-material";
-import profileImg from "../assets/Raji..jpg";
+import profileImg from "../data/profileImg";
+
 
 function Hero({ onContactClick }) {
   const [animate, setAnimate] = useState(true);

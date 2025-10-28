@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography, Avatar, Divider, Stack, Grid, Paper } from '@mui/material';
-import profileImg from '../assets/Raji..jpg';
+import profileImg from "../data/profileImg";
+
 
 // Import icons
 import { FaReact, FaNodeJs, FaDatabase, FaGitAlt, FaDocker } from 'react-icons/fa';
